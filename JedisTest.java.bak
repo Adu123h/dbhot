@@ -10,7 +10,7 @@ public class JedisTest {
     }
     public static void testJedis(){
         //1连接redis
-        Jedis jedis=new Jedis("192.168.222.131",6378);
+        Jedis jedis=new Jedis("192.168.1.11",6378);
         //操作redis
         jedis.auth("redis");
         System.out.println(jedis.get("book"));
