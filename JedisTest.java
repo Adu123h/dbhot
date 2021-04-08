@@ -1,0 +1,25 @@
+package com.Adu;
+
+import redis.clients.jedis.Jedis;
+
+import java.util.Set;
+
+public class JedisTest {
+    public static void main(String[] args) {
+        testJedis();
+    }
+    public static void testJedis(){
+        //1连接redis
+        Jedis jedis=new Jedis("192.168.1.11",6378);
+        //操作redis
+        jedis.auth("redis");
+        System.out.println(jedis.get("book"));
+
+
+        Set<String> sets=jedis.keys("*");
+        sets.forEach(key-> System.out.println("key="+key));
+        //关闭reids
+        jedis.flushDB();
+        jedis.close();
+    }
+}
