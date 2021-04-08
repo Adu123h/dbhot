@@ -15,7 +15,7 @@ public class JedisTest {
         jedis.auth("redis");
         System.out.println(jedis.get("book"));
 
-
+           System.out.println(jedis.get("bo5f"));
         Set<String> sets=jedis.keys("*");
         sets.forEach(key-> System.out.println("key="+key));
         //关闭reids
